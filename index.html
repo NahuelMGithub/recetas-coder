@@ -8,19 +8,25 @@
 </head>
 <body>
 
-    <header class="header"></header>
+    <header class="header">
+        <a class="header-link" href="#">Receta del día</a>
+        <a class="header-link" href="#">Con lo que tengo, que cocino?</a>
+        <a class="header-link" href="#">Crear una receta</a>
+    </header>
     <main class="main">
 
         <div class="seleccion">
             <h3>Para esta preentrega solo uso estos cuatro filtros</h3>
+            <p>De fondo hay una "base de datos con varias comidas" Por ahora unicamente se muestras las recetas que cumplan estas condiciones:</p>
+            <p>Hacer click sobre cada boton y ver sus filtros:</p>
             <section class="botonera">
                 <button class="btnReceta btn-vegetariano">Solo Vegetariano</button>
                 <button class="btnReceta btn-horno">Comidas al horno</button>
                 <button class="btnReceta btn-parrilla">Comidas a la parrilla</button>
-                <button class="btnReceta btn-vegano">Solo vegano</button>
+                <a  href="https://www.youtube.com/watch?v=GBIIQ0kP15E&ab_channel=SheeshBruhSubscribeBro" ><button class="btnReceta btn-vegano">Solo vegano</button></a>
             </section>
         </div>
-        <!-- 
+        <!--    Por ahora NO
         <section class="ingredientes">
             <article class="ingredientes-carnes"><h2> Carnes</h2>
                 <label>Selecciona tus ingredientes:</label><br>
@@ -72,6 +78,7 @@
     </main>
     <footer class="footer"></footer>
 
+    <script src="/js/data.js"></script>
     <script src="/js/app.js"></script>
 </body>
 </html>
