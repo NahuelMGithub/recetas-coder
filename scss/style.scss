@@ -1,9 +1,15 @@
 @import "header.scss";
 @import "main.scss";
 @import "footer.scss";
-@import "preentrega02.scss";
+@import "menuModal.scss";
+
 
 
 *{
     margin: 0;
+}
+
+.body{
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom right, $colo-secundary, $colo-primary); 
 }

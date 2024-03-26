@@ -1,0 +1,27 @@
+dos webs:
+buscador de recetas
+creador de recetas
+
+Modal de seleccion
+
+seleccionar por choise
+
+
+filtros
+
+botones:
+por tipo de comida
+por medio de coccion
+por ingredientes
+Buscar recetas
+
+buscador por texto
+
+
+estetica
+efectos
+
+
+ 
+----------------------------------------------------- Listos -----------------------------------------------------
+un solo fondo sin header marcado

@@ -1,84 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi receta</title>
     <link rel="stylesheet" href="css/style.css">
+
+      <!--  <script src="/js/data.js"></script> defer o usar json, no se cual--> 
+    <script src="/js/app.js" defer></script>
 </head>
-<body>
+
+<body class="body">
+
+
+
 
     <header class="header">
-        <a class="header-link" href="#">Receta del día</a>
-        <a class="header-link" href="#">Con lo que tengo, que cocino?</a>
-        <a class="header-link" href="#">Crear una receta</a>
+        <nav class="nav-sup">
+            <a class="header-link" href="#">Logo</a>
+            <h2>
+              Busca las mejores recetas adaptadas a tus gustos
+            </h2>
+            <a class="header-link" href="pages/creador.html">Crear una receta</a>
+        </nav>
+        <nav class="nav-inf">
+            <section class="selectores-conteiner">
+              <p>Elegí la receta a tu medida</p>
+               <section class="selectores"> 
+                <div class="selectorReceta"> 
+                  <h3>Que ingredientes tenes?</h3>
+                  <button id="btnModalIngredientes">Filtrar Ingredientes</button>
+                </div>
+                <div class="selectorReceta formasDeCocina">        <h3>Donde lo cocinas</h3>
+                  <select id="seleccion-formaCocina">
+                   
+                    <option value="cualquiera">Indistinto </option>
+                    <option value="Horno">Horno </option>
+                    <option value="Sarten">Sarten </option>
+                    <option value="Parilla">Parilla </option>
+                    <option value="Disco">Disco </option>
+                    <option value="Olla">Olla</option>
+                  </select></div>
+                <div class="selectorReceta aptas">
+                  <h3>Dieta</h3>
+                  <select id="seleccion-dieta">
+                   
+                    <option value="cualquiera">Indistinto </option>
+                    <option value="Celiaco">Celiaco </option>
+                    <option value="Vegetariano">Vegetariano </option>
+                    <option value="Vegano">Vegano </option>
+              
+                  </select>
+
+          
+                </div>
+    </section>
+                
+            </section>
+            
+        </nav>
+
     </header>
+
+  
     <main class="main">
 
-        <div class="seleccion">
-            <h3>Para esta preentrega solo uso estos cuatro filtros</h3>
-            <p>De fondo hay una "base de datos con varias comidas" Por ahora unicamente se muestras las recetas que cumplan estas condiciones:</p>
-            <p>Hacer click sobre cada boton y ver sus filtros:</p>
-            <section class="botonera">
-                <button class="btnReceta btn-vegetariano">Solo Vegetariano</button>
-                <button class="btnReceta btn-horno">Comidas al horno</button>
-                <button class="btnReceta btn-parrilla">Comidas a la parrilla</button>
-                <a  href="https://www.youtube.com/watch?v=GBIIQ0kP15E&ab_channel=SheeshBruhSubscribeBro" ><button class="btnReceta btn-vegano">Solo vegano</button></a>
-            </section>
-        </div>
-        <!--    Por ahora NO
-        <section class="ingredientes">
-            <article class="ingredientes-carnes"><h2> Carnes</h2>
-                <label>Selecciona tus ingredientes:</label><br>
-                <input type="checkbox" id="carne" name="ingredientes" value="carne">
-                <label for="carne">Carne</label><br>
-                <input type="checkbox" id="pollo" name="ingredientes" value="pollo">
-                <label for="pollo">Pollo</label><br>
-                <input type="checkbox" id="lechuga" name="ingredientes" value="lechuga">
-                <label for="pescado">Pescado</label><br>
-              </article>
-
-        <article class="ingredientes-verduras"><h2> Granos</h2>
-            <label>Selecciona tus ingredientes:</label><br>
-            <input type="checkbox" id="carne" name="ingredientes" value="Lechuga">
-            <label for="carne">Carne</label><br>
-            <input type="checkbox" id="pollo" name="ingredientes" value="pollo">
-            <label for="pollo">Pollo</label><br>
-            <input type="checkbox" id="lechuga" name="ingredientes" value="lechuga">
-            <label for="pescado">Pescado</label><br>
-        </article>
-
-        <article class="ingredientes-hortalizas"><h2> Hortalizas</h2>
-            
-         
-        </article>
-
-        <article class="ingredientes-Frutas"><h2> Frutas</h2>
-            
-        </article>
-
-        <article class="ingredientes-lacteos"><h2> Lacteos</h2>
-           
-        </article>
+      <button id="btnBuscadorDeRecetas">Buscar Recetas</button>
 
 
-        <article class="ingredientes-alacena"><h2> Alacena</h2>
-          
-        </article>
-
-
-        </section>
-        <section>    
-            <button class="btnRecetaRandom">Receta Random</button>
-            <button class="btnRecetaConLoQueTengo">Con lo que tengo que cocino</button>
-        </section>
+<!----------------------- Modal menu de Ingredientes -------------------------->
+<!---tipoDeIngrediente = ["Carne", "Verdura", "Legumbres", "Lacteo", "Cereales-Harinas", "Alacena"]------>
+<div id="menuIngredientes" class="modal">
+  <div class="modal-content">
+    <button id="cerraModal">Cerrar</button>
+ 
+    <p>Selecciona los Ingredientes que desea usar:</p>
+<div class="ingredienteModal carnes">
+  <form action="#">
+    <input type="checkbox" id="opcion1" name="opcion1" value="Pollo">
+    <label for="opcion1">Opción 1</label><br>
+    <input type="checkbox" id="opcion2" name="opcion2" value="Carne">
+    <label for="opcion2">Opción 2</label><br>
+    <input type="checkbox" id="opcion3" name="opcion3" value="pezcado">
+    <label for="opcion3">Opción 3</label><br>
+    <!-- Agrega más opciones si es necesario -->
+    <br>
   
-      -->
+  </form>
+</div>
+<div class="ingredienteModal verdura"></div>
+<div class="ingredienteModal legumbre"></div>
+<div class="ingredienteModal lacteo"></div>
+<div class="ingredienteModal cerealesHarinas"></div>
+<div class="ingredienteModal alacena"></div>
+
+   
+  </div>
+</div>
+
+<div class="menuRecetas-container">
+  <div id="menuRecetas"></div>
+</div>
+   
+
 
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="footer-text">
+        <h3>Más de 1500 recetas</h3>
+      </div>
+      <div class="footer-auspiciantes">
 
-    <script src="/js/data.js"></script>
-    <script src="/js/app.js"></script>
+      </div>
+    </footer>
+
+
+ 
 </body>
+
 </html>

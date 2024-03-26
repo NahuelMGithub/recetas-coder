@@ -1,35 +1,51 @@
 
+//----------------- COSAS DEL ANTERIOR Q PUEDEN SERVIR COMO REFERENCIA
+//const btnVegetariano = document.querySelector('.btn-vegetariano');
+//btnVegetariano.addEventListener('click', filtrarSoloVegetariano)
 
-///-------------------------------------------------------------------------------------------------------------------------------------------------------------//
-///------------------------------------- preentrega 2. Selectores de botones. SOLO para esta preentrega---------------------------------------------------------//
-///-------------------------------------------------------------------------------------------------------------------------------------------------------------//
+//----------------- funcion para abrir el MODAL y seleccionar los ingredientes
 
 
-const btnVegetariano = document.querySelector('.btn-vegetariano');
-const btnHorno = document.querySelector('.btn-horno');
-const btnParrilla = document.querySelector('.btn-parrilla');
-const btnVegano = document.querySelector('.btn-vegano');
+// Función para abrir el modal
+function desplegarMenu() {
+    var modal = document.querySelector("#menuIngredientes");
+    modal.style.display = "block";
+    console.log(modal)
+  }
+  
+  // Función para cerrar el modal
+   function cerarMenu() {
+    var modal = document.querySelector("#menuIngredientes");
+    modal.style.display = "none";
 
-btnVegetariano.addEventListener('click', filtrarSoloVegetariano)
-btnHorno.addEventListener('click', filtrarAlHorno)
-btnParrilla.addEventListener('click', filtrarALaParrilla)
-btnVegano.addEventListener('click', function () {console.log('hola')})
+    actualizarCarta()
+  }
+ 
+  //--------------------------------------- botones
+  
+  const btnModalIngredientes = document.querySelector('#btnModalIngredientes');
+  btnModalIngredientes.addEventListener('click', desplegarMenu)
+
+  const btnCerrarMenu = document.querySelector('#cerraModal');
+  btnCerrarMenu.addEventListener('click', cerarMenu) 
+
+
 
 
 // -------------------------------------------funciones de FILTRADO de pedido. 
 
 
-
 //Estas funciones estan armadas solo para la preentrega 02. Eventaulmente van a ser mejores
 
-function filtrarSoloVegetariano(){
+function filtrarSoloVegetariano() {
     let recetasVegetarianas = []
-    todasLasRecetas.forEach(receta =>{
-        if(receta.esVegetariano()){
+    todasLasRecetas.forEach(receta => {
+        if (receta.esVegetariano()) {
             recetasVegetarianas.push(receta)
-             }  }  )
-      
-       mostrarRecetas(recetasVegetarianas)
+        }
+    })
+
+    mostrarRecetas(recetasVegetarianas)
 
 }
 
@@ -37,64 +53,67 @@ function filtrarSoloVegetariano(){
 //-- solo a la parrilla
 
 
-function filtrarALaParrilla(){
+function filtrarALaParrilla() {
     let recetasALaParrilla = []
-    todasLasRecetas.forEach(receta =>{
-        if(receta.formaCocina == "Parilla"){
+    todasLasRecetas.forEach(receta => {
+        if (receta.formaCocina == "Parilla") {
             recetasALaParrilla.push(receta)
-             }  }  )
-      
-       mostrarRecetas(recetasALaParrilla)
-    }
+        }
+    })
+
+    mostrarRecetas(recetasALaParrilla)
+}
 
 // solo al horno
 
-function filtrarAlHorno(){
+function filtrarAlHorno() {
     let recetasAlHorno = []
-    todasLasRecetas.forEach(receta =>{
-        if(receta.formaCocina == "Horno"){
+    todasLasRecetas.forEach(receta => {
+        if (receta.formaCocina == "Horno") {
             recetasAlHorno.push(receta)
-             }  }  )
-      
-       mostrarRecetas(recetasAlHorno)
-    }
+        }
+    })
+
+    mostrarRecetas(recetasAlHorno)
+}
 
 //-----------------------------------------------  funcion para MOSTRAR los pedidos. 
 
 // funcion que se ejecuta para hacer una demo detallada de la receta. Por el momento en un alert. 
-function mostrarRecetas(recetaAMostrar){
-   let totalRecetas = recetaAMostrar.length;
+function mostrarRecetas(recetaAMostrar) {
+    let totalRecetas = recetaAMostrar.length;
 
-   for(let i = 0; i< totalRecetas; i+=1){
-    alert(`Receta Nro ${i+1} 
+    for (let i = 0; i < totalRecetas; i += 1) {
+        alert(`Receta Nro ${i + 1} 
         Nombre= ${recetaAMostrar[i].nombre}
-        Ingredientes= ${ mostrarIngredientes(recetaAMostrar[i].ingredientes)}
+        Ingredientes= ${mostrarIngredientes(recetaAMostrar[i].ingredientes)}
         Modo de coccion= ${recetaAMostrar[i].formaCocina}
         Tiempo estimado= ${recetaAMostrar[i].tiempo} minutos
         Receta= ${recetaAMostrar[i].instrucciones}`)
-   }
+    }
 }
 
 // Esta funcion muestra los nombres de los ingredientes de una lista de ingredientes. Esto se usa porque en la funcion Motras receta, ingredientes lo retorna como objetos
-function mostrarIngredientes(ingredientes){
-     return ingredientes.map(ingrediente => ingrediente.nombre)
-    
+function mostrarIngredientes(ingredientes) {
+    return ingredientes.map(ingrediente => ingrediente.nombre)
+
 }
 
-//---------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------
+
+const menuRecetas = document.querySelector('#menuRecetas')
+
+//------------- SELECTORES DE INGREDIENTES
+
+const ingrediente1 = document.querySelector('#opcion1')
+const ingrediente2 = document.querySelector('#opcion2')
+const ingrediente3 = document.querySelector('#opcion3')
 
 
-/*
+/// como tomo los valores?
 
-hacer 5 recetas mas
-
-linkear con boostrap
-
-crear card
+function actualizarCarta(){
 
 
-
-concatenar filters para mas adelante. (cuando quiera vegetariano con tomate, etc)
-
-
-*/
+    
+}
