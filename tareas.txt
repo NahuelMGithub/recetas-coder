@@ -1,27 +1,104 @@
-dos webs:
-buscador de recetas
+cosas que piden para la entrega:
+
+-
+condicionales - tiene
+bucles - tiene
+funciones - tiene
+objetos - tiene
+array - tiene
+storage y json - FALTA
+eventos del DOM - tiene
+Optimizar -  FALTA
+
+
+------------------------------------------------------------
+
+ver: 
+after 3 
+
+------------------------------------------------------------
+
+storage 
+agregar a favoritos
+boton de ver favoritos
+
+
+------------------------------------------------------------
+wbe> 
 creador de recetas
+creador de Receta. ver clase de storage aca
+Ahi puedo usar storage
+
+slector de tipo
+selector de ingredientes
+input nombre
+input pasos
+Guardar
+
+------------------------------------------------------------
+
+data:
+
+hacer 20 recetas
+
+------------------------------------------------------------
+
+
+
+estetica
+
+for en el label, para que me permita hacer clik y q entre. una huevada
+
+Acomodar cards
+
+acomodar menu
+
+------------------------------------------funciones y optimizacion
+
+probablemente pueda usar un spred para ver el array
+
+tal vez pueda optimizar con un ternario y con la notacion destruction (o como se diga)
+
+
+
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------- Listos -----------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+
+
+un solo fondo sin header marcado
+
+funciones: 
+los 3 filtros
+
+abrir y cerrar Modal
+Buscar recetas
+
+html todos los ingredientes
+
+
+btns reconocer todos los botones
+
+
+filtros
+
+botones:
+
+por ingredientes
+Buscar recetas
+
+
 
 Modal de seleccion
 
 seleccionar por choise
 
 
-filtros
-
-botones:
-por tipo de comida
-por medio de coccion
-por ingredientes
-Buscar recetas
-
-buscador por texto
+hacer 36 ingredientes
 
 
-estetica
-efectos
 
-
- 
------------------------------------------------------ Listos -----------------------------------------------------
-un solo fondo sin header marcado
+webs:
+buscador de recetas

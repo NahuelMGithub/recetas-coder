@@ -3,7 +3,7 @@
 
 
 const tipoDeIngrediente = ["Carne", "Verdura", "Legumbres", "Lacteo", "Cereales-Harinas", "Alacena"];
-const formaDeCocinar = ["Horno", "Sarten", "Parilla", "Disco", "Olla"];
+const formaDeCocinar = ["Horno", "Sarten", "Parrilla", "Disco", "Olla", "Bol"];
 
 
 
@@ -21,9 +21,17 @@ class Receta {
         this.ingredientes = ingredientes; // es una lista de ingredientes
         this.formaCocina = formaCocina; // es unlistado delas formas posibles para cocinarlo. 
         this.tiempo = tiempo; // tiempo que se tarda en cocinar
+
     }
 
 
+    listaIngredientes() {
+    
+        let ingredientesTotales = this.ingredientes.map(ingrediente => ingrediente.nombre); 
+        return ingredientesTotales;
+    }
+
+    
     esVegetariano() {
         let esVegetariano = true;
 
@@ -34,10 +42,36 @@ class Receta {
         })
         return esVegetariano;
     }
+
+    esVegano() {
+        let esVegano = true;
+        
+        this.ingredientes.forEach(ingrediente => {
+            if (ingrediente.tipo === "Carne" || ingrediente.nombre == 'Huevos' || ingrediente.tipo === "Lacteo") {
+                esVegano = false
+            }
+        })
+        return esVegano;
+    }
+
+    esAptoCeliaco() {
+        let esAptoCeliaco = true;
+
+        this.ingredientes.forEach(ingrediente => {
+            if (ingrediente.tipo === "Cereales-Harinas") {
+                esAptoCeliaco = false
+            }
+        })
+        return esAptoCeliaco;
+    }
 }
 
 
+///----------------------------------  lista de ingredientes
 
+let ing = ["Huevos",  "Salsa de Soja", "Pure de Tomate",   "Arroz", "Fideos Largos",  "Pan",  "Harina",
+"Manteca", "Leche",  "Muzzarella", "Crema", "Lentejas",  "Poroto","Arbejas",  "Lechuga", "Tomate", "Papa",  "Cebolla",
+"Morron",  "Cebolla de Verdeo",  "Carne picada",  "Choriso", "Asado","Vacio", "Merluza","Pechuga de Pollo"]
 
 
 
@@ -47,58 +81,55 @@ class Receta {
 //-------------------------------------------------------- "Base de Datos" -----------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------------------
 
-//----------------- Para la preentrega solo voy a hacer 3 de cada tipo y luego algunas recetas
 
 //-------------------------------------------------------- Listado de Ingredientes.  -------------------------------------------------------
 
 
 //---------- Ingredientes - Carnes tipoDeIngrediente[0]------- 
 const pechuga = new Ingrediente(
-    "Pechuga de Pollo", tipoDeIngrediente[0], 2.000, new Quimica(300, 150, 200)
-)
+    "Pollo", tipoDeIngrediente[0] )
+
+    const merluza = new Ingrediente(
+        "Merluza", tipoDeIngrediente[0] )
 
 const vacio = new Ingrediente(
-    "Vacio", tipoDeIngrediente[0], 3.000, new Quimica(200, 150, 200)
-)
+    "Vacio", tipoDeIngrediente[0])
 
 const asado = new Ingrediente(
-    "Asado", tipoDeIngrediente[0], 2.300, new Quimica(400, 150, 200)
-)
+    "Asado", tipoDeIngrediente[0], )
+
 
 const choriso = new Ingrediente(
-    "Choris", tipoDeIngrediente[0], 2.300, new Quimica(400, 150, 200)
-)
+    "Choriso", tipoDeIngrediente[0] )
+
+ const carnePicada = new Ingrediente(
+       "Carne picada", tipoDeIngrediente[0] )
 
 
-// matambre Carne
-// Merluza
+
+
 
 
 //---------- Ingredientes - Verdura tipoDeIngrediente[1]-------
 
 const verdeo = new Ingrediente(
-    "Cebolla de Verdeo", tipoDeIngrediente[1], 100, new Quimica(50, 150, 100)
-)
+    "Cebolla de Verdeo", tipoDeIngrediente[1])
 
 const morron = new Ingrediente(
-    "Morron", tipoDeIngrediente[1], 100, new Quimica(50, 150, 100)
-)
+    "Morron", tipoDeIngrediente[1]) 
 
 
 const cebolla = new Ingrediente(
-    "Cebolla", tipoDeIngrediente[1], 100, new Quimica(50, 150, 100)
-)
+    "Cebolla", tipoDeIngrediente[1])
 
 const lechuga = new Ingrediente(
-    "lechuga", tipoDeIngrediente[1], 100, new Quimica(50, 130, 100)
-)
+    "Lechuga", tipoDeIngrediente[1])
 
 const tomate = new Ingrediente(
-    "tomate", tipoDeIngrediente[1], 100, new Quimica(50, 130, 100)
-)
+    "Tomate", tipoDeIngrediente[1]) 
 
 const papa = new Ingrediente(
-    "papa", tipoDeIngrediente[1], 100, new Quimica(50, 130, 100)
+    "Papa", tipoDeIngrediente[1]
 )
 
 //zanahoria
@@ -108,15 +139,13 @@ const papa = new Ingrediente(
 //---------- Ingredientes - Legumbre tipoDeIngrediente[2]-------
 
 const lenteja = new Ingrediente(
-    "Lentejas", tipoDeIngrediente[2], 100, new Quimica(50, 150, 100)
-)
+    "Lentejas", tipoDeIngrediente[2],)
 
 const poroto = new Ingrediente(
-    "poroto", tipoDeIngrediente[2], 100, new Quimica(50, 150, 100)
-)
+    "Poroto", tipoDeIngrediente[2]) 
 
 const arbejas = new Ingrediente(
-    "arbejas", tipoDeIngrediente[2], 100, new Quimica(50, 150, 100)
+    "Arbejas", tipoDeIngrediente[2]
 )
 
 
@@ -124,38 +153,46 @@ const arbejas = new Ingrediente(
 
 //---------- Ingredientes - Lacteo tipoDeIngrediente[3]-------
 const muzzarella = new Ingrediente(
-    "Muzzarella", tipoDeIngrediente[3], 100, new Quimica(150, 100, 300)
-)
+    "Muzzarella", tipoDeIngrediente[3])
+
 
 const crema = new Ingrediente(
-    "Crema", tipoDeIngrediente[3], 500, new Quimica(50, 600, 300)
+    "Crema de leche", tipoDeIngrediente[3]
 )
 
 const leche = new Ingrediente(
-    "Leche", tipoDeIngrediente[3], 500, new Quimica(50, 600, 300)
+    "Leche", tipoDeIngrediente[3]
 )
 
 const manteca = new Ingrediente(
-    "Manteca", tipoDeIngrediente[3], 500, new Quimica(50, 600, 300)
+    "Manteca", tipoDeIngrediente[3]
 )
 
-//queso parmezano
+const queso = new Ingrediente(
+    "Queso parmezano", tipoDeIngrediente[3]
+)
+
+
 
 //---------- Ingredientes - Cereales-Harinas tipoDeIngrediente[4]-------
 const harina = new Ingrediente(
-    "Harina", tipoDeIngrediente[4], 100, new Quimica(50, 150, 100)
+    "Harina", tipoDeIngrediente[4]
 )
 
 const pan = new Ingrediente(
-    "Pan", tipoDeIngrediente[4], 100, new Quimica(150, 150, 100)
-)
+    "Pan", tipoDeIngrediente[4])
+
 
 const fideosLargos = new Ingrediente(
-    "Fideos Largos", tipoDeIngrediente[4], 100, new Quimica(50, 150, 100)
+    "Fideos Largos", tipoDeIngrediente[4]
+)
+
+const fideoSopa = new Ingrediente(
+    "Fideos de Sopa", tipoDeIngrediente[4]
 )
 
 const arroz = new Ingrediente(
-    "Arroz", tipoDeIngrediente[4], 100, new Quimica(50, 150, 100)
+    "Arroz", tipoDeIngrediente[4]
 )
 
 
@@ -165,13 +202,20 @@ const arroz = new Ingrediente(
 //---------- Ingredientes - Alacena tipoDeIngrediente[5]-------
 
 const pureTomate = new Ingrediente(
-    "Pure de Tomate", tipoDeIngrediente[5], 100, new Quimica(50, 150, 100)
+    "Pure de Tomate", tipoDeIngrediente[5]
 )
 
 const salsaSoja = new Ingrediente(
-    "Salsa de Soja", tipoDeIngrediente[5], 100, new Quimica(50, 150, 100)
+    "Salsa de Soja", tipoDeIngrediente[5]
 )
 
+const huevos = new Ingrediente(
+    "Huevos", tipoDeIngrediente[5]
+)
+
+const calditos = new Ingrediente(
+    "Calditos", tipoDeIngrediente[5]
+)
 
 
 
@@ -183,20 +227,20 @@ const salsaSoja = new Ingrediente(
 
 
 const polloAlVerdeo = new Receta(
-    "Pollo al verdeo", tipoDeComida[1], "Dorar pollo y retirar. Reahogar cebola, incorporar pollo y crema. Sal y pimieenta",
+    "Pollo al verdeo",  "Dorar pollo y retirar. Reahogar cebola, incorporar pollo y crema. Sal y pimieenta",
     [pechuga, verdeo, crema], formaDeCocinar[1], 45
 )
 
 const pizza = new Receta(
-    "Pizza", tipoDeComida[1], ".... receta pizza", [harina, muzzarella, pureTomate], formaDeCocinar[0], 30
+    "Pizza",  ".... receta pizza", [harina, muzzarella, pureTomate], formaDeCocinar[0], 30
 )
 
 const tartaVerduas = new Receta(
-    "Tarta de verduras", tipoDeComida[1], ".... Hace una tarta loco, no es tan dificil", [harina, muzzarella, pureTomate], formaDeCocinar[0], 30
+    "Tarta de verduras",  ".... Hace una tarta loco, no es tan dificil", [harina, muzzarella, pureTomate], formaDeCocinar[0], 30
 )
 
 const vacioAlHorno = new Receta(
-    "Vacio al horno", tipoDeComida[1], ".... Vacio al horno, con papas, cebolla y morron", [vacio, papa, morron, cebolla], formaDeCocinar[0], 1.30
+    "Vacio al horno", ".... Vacio al horno, con papas, cebolla y morron", [vacio, papa, morron, cebolla], formaDeCocinar[0], 1.30
 )
 
 
@@ -205,18 +249,27 @@ const vacioAlHorno = new Receta(
 
 
 const wokVegetales = new Receta(
-    "Wok de Vegetales", tipoDeComida[1], "Saltear cebolla y verter arroz con agua. ", [arroz, salsaSoja, cebolla, morron], formaDeCocinar[1], 30
+    "Wok de Vegetales",  "Saltea tiras de pimientos, zanahorias y brotes de soja en aceite de sésamo caliente. Agrega salsa de soja y jengibre rallado. Cocina hasta que estén tiernos pero crujientes. Sirve caliente.", [arroz, salsaSoja, cebolla, morron], formaDeCocinar[1], 30 
 )
 
 //------ Recetas a la Parilla
 
 const parrillada = new Receta(
-    "Parrillada Completa", tipoDeComida[1], ".... Un aplauso par ael asador", [asado, vacio, choriso], formaDeCocinar[2], 30
+    "Parrillada Completa",  ".... Un aplauso par ael asador", [asado, vacio, choriso], formaDeCocinar[2], 30
 )
 
-const choripan = new Receta(
-    "Choris", tipoDeComida[1], ".... Entero o mariposa?", [choriso, pan], formaDeCocinar[2], 30
+const polloALaParrilla = new Receta(
+    "Pollo a la Parrilla",  ".... Un aplauso par ael asador", [pechuga, vacio, morron], formaDeCocinar[2], 30
 )
+
+
+const asadidto = new Receta(
+    "Asado rapio",  ".... Un aplauso par ael asador", [asado, tomate, lechuga], formaDeCocinar[2], 30
+)
+
+
+const choripan = new Receta(
+    "Choris",  ".... Entero o mariposa?", [choriso, pan], formaDeCocinar[2], 30)
 
 //------ Recetas al Disco
 
@@ -225,6 +278,9 @@ const choripan = new Receta(
 
 
 //------ Recetas em Olla
+
+//------
+
 
 
 
@@ -235,5 +291,7 @@ const choripan = new Receta(
 
 //----------------------- Array de recetas. Aca van a estar TODAS LAS RECETAS. Es la BD por el momento.
 
-const todasLasRecetas = [polloAlVerdeo, pizza, tartaVerduas, parrillada, choripan, wokVegetales, vacioAlHorno]
+const todasLasRecetas = [polloAlVerdeo, pizza, tartaVerduas, parrillada, choripan, wokVegetales, vacioAlHorno, asadidto, polloALaParrilla ]
+
+
 
