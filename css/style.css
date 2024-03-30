@@ -117,17 +117,19 @@
   height: auto;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
+  
 }
 
 .modal-content {
   background-image: linear-gradient(to bottom right, #feb47b, rgb(101, 98, 210));
-  margin: 5% auto;
+  margin: 1% auto;
   padding: 20px;
   border: 1px solid #000;
   width: 90%;
   text-align: center;
   display: flex;
   flex-direction: column;
+  
 }
 
 .modal_content-partes {
