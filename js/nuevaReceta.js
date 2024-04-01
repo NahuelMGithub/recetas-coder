@@ -1,5 +1,5 @@
 const btnNuevaReceta = document.querySelector('#btnNuevaReceta')
-btnNuevaReceta.addEventListener('click', crearNuevaReceta)
+btnNuevaReceta.addEventListener('click', guardarReceta)
 
 const pasosReceta = document.querySelector('#pasosReceta')
 const nombreReceta = document.querySelector('#nombreReceta')
@@ -43,11 +43,22 @@ function alertaValidacion(problema) {
 
 
 function guardarReceta(){
-     
+
+let recetaUsuario = new Receta (nombreReceta.value, pasosReceta.value, ingredientesQueTiene, 
+    formaDeCocina.value, tiempoReceta.value )
+    
+    localStorage.setItem("recetasDeUsuario", JSON.stringify(recetaUsuario))
+
+
 }
 
-//localStorage.setItem("Nombre de Receta", "hola")
-//localStorage.removeItem("Nombre de Receta")
+
+// para recuperar lo hace con un parse. justito a la hora
+
+// se me ocurre que puedo recuperar todo. pushear el objeto y setear.
+
+// recuperar y setear objetos dentro de un array
+
 
 /*
 la idea es que al cargar el Buscador, 

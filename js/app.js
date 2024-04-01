@@ -70,6 +70,7 @@ btnBuscadorDeRecetas.addEventListener('click', buscarRecetas);
 function desplegarMenu() {
 
     menuModal.style.display = "block";
+    
 
 }
 
@@ -115,6 +116,7 @@ function buscarRecetas() {
 
     // primero, limpiar la panalla, por si vuelvo a pedir
     limpiarCarta()
+    obtenerRectasCreadas()
 
     //------------------- menu de carga. Eventualmente va a ser una de esas animaciones que indica que esta buscando
 
@@ -162,14 +164,16 @@ function buscarRecetas() {
     //--------- muestra los ingredientes
     mostrarRecetas(recetasFltradas)
 
-
-
-
     
 }
 
 
+// hay un BUG pero no puedo encontrar el por que.
+/*
+por algun motivo cuando hago un filtro por ingredientes me retoma auque tenga solo el primer elemento
 
+
+*/
 
 
 
@@ -214,23 +218,10 @@ function mostrarRecetas(recetasAMostrar) {
         }
 
     )
-    agregarBotonesDeFavoritos()
+  
 }
 
-function agregarBotonesDeFavoritos() {
-    // Agregar controlador de eventos para los botones "Agregar a Favoritos"
-    let addToFavoritesButtons = document.querySelectorAll('.agregarAFavoritos');
-    addToFavoritesButtons.forEach(button => {
-        button.addEventListener('click', agregarAFavoritos
 
-        );
-    });
-
-
-    function agregarAFavoritos() {
-        alert('Su receta fue guardad en favoritos')
-    }
-}
 
 
 // Esta funcion muestra los nombres de los ingredientes de una lista de ingredientes. Esto se usa porque en la funcion Motras receta, ingredientes lo retorna como objetos
@@ -249,3 +240,68 @@ function mostrarIngredientes(ingredientes) {
 //--------------------------------------------------------------------------------
 
 //------------------- creacion
+
+// obtiene la receta creada en el local storage, y la agrega en la lista de recetas, solo si no existe ya 
+
+function obtenerRectasCreadas(){
+ 
+    // obtengo el objeto de receta creada SI ya creamos una receta, sino no pasa nada
+    if(localStorage.getItem("recetasDeUsuario") !== null){
+    let objetoImportado = JSON.parse(localStorage.getItem("recetasDeUsuario"))
+
+
+
+    
+
+    //buscarIngredientesImportados(objetoImportado.ingredientes)
+ 
+
+    let ingImp = buscarIngredientesImportados(objetoImportado.ingredientes )
+    //console.log("ingImp es: " + ingImp)
+   
+ 
+
+
+    //-------------- hago el objeto Receta (para usar metodos)
+
+
+    // esto lo puedo mejorar achicando el objetoImportado {}
+     let recetaImportada = new Receta(objetoImportado.nombre, objetoImportado.instrucciones,
+        ingImp, objetoImportado.formaCocina, objetoImportado.tiempo)
+
+
+        // SI no se encuentra en la lista de recetas, lo incorpora
+
+    if (!todasLasRecetas.some(receta => receta.nombre === recetaImportada.nombre)) {
+        todasLasRecetas.push(recetaImportada);
+    }
+    }
+
+}
+
+
+function buscarIngredientesImportados(nombreIngredientesImportados) {
+    // almacenar los ingredientes importados
+    let ingredientesImportados = [];
+
+
+  
+
+  
+// POR ALGUN MOTIVO NO HACE LA COMPARACION
+    // Recorrer cada nombre en nombreIngredientesImportados
+    for (let nombreIngrediente of nombreIngredientesImportados) {
+
+     for (let ingrediente of todosLosIngredientes) {
+            if (nombreIngrediente === ingrediente.nombre ) {
+                // Si se encuentra, agregarlo a ingredientesImportados
+                ingredientesImportados.push(ingrediente);
+                // Romper el bucle una vez que se encuentra el ingrediente
+                break;
+            }
+        } 
+    }
+    console.log(ingredientesImportados)
+    // Devolver el array de ingredientes importados
+    return ingredientesImportados; 
+}

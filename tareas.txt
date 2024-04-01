@@ -6,7 +6,7 @@ bucles - tiene
 funciones - tiene
 objetos - tiene
 array - tiene
-storage y json - FALTA
+storage y json - tiene
 eventos del DOM - tiene
 Optimizar -  FALTA
 
@@ -14,15 +14,21 @@ Optimizar -  FALTA
 ----------------------------
 
             PASOS
-ver storage y hacer stora en app ---como verlos? 
+
+
 leer ultimo power y hacer refactor
 ver afeter 3
-estetica
+ 
 funciones accesorias (alerta y tiempo espera)
-favoritos
+
+
+card---------
+estetica
+incorporar video a receta (y btn)
+incorporar foto
 
 ------------------------------------------------------------
-
+        funciones accesoraias
 
 mostrar alerta con iner html
 video de carga con 3 segundos
@@ -32,28 +38,6 @@ video de carga con 3 segundos
 
 ver: 
 after 3 
-clase de storage
-
-------------------------------------------------------------
-
-
-boton de favorito..... par la final
-storage 
-agregar a favoritos
-boton de ver favoritos
-tal vez pueda hacer con id 
-basicamente, el id es un nro. 
-cuando creo, (con boton crear receta)
-mete todo en un array y para traer los datos, uso la posicion q es id -1
-
-
-------------------------------------------------------------
-wbe> 
-creador de recetas
-creador de Receta. ver clase de storage aca
-Ahi puedo usar storage
-
-
 
 ------------------------------------------------------------
 
@@ -88,6 +72,10 @@ tal vez pueda optimizar con un ternario y con la notacion destruction (o como se
 ------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------
 
+wbe> 
+creador de recetas
+creador de Receta. ver clase de storage aca
+Ahi puedo usar storage
 
 un solo fondo sin header marcado
 
@@ -130,3 +118,5 @@ selector de ingredientes
 input nombre
 input pasos
 Guardar
+
+ver storage y hacer stora en app ---como verlos? 

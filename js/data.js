@@ -67,11 +67,8 @@ class Receta {
 }
 
 
-///----------------------------------  lista de ingredientes
 
-let ing = ["Huevos",  "Salsa de Soja", "Pure de Tomate",   "Arroz", "Fideos Largos",  "Pan",  "Harina",
-"Manteca", "Leche",  "Muzzarella", "Crema", "Lentejas",  "Poroto","Arbejas",  "Lechuga", "Tomate", "Papa",  "Cebolla",
-"Morron",  "Cebolla de Verdeo",  "Carne picada",  "Choriso", "Asado","Vacio", "Merluza","Pechuga de Pollo"]
+
 
 
 
@@ -96,7 +93,7 @@ const vacio = new Ingrediente(
     "Vacio", tipoDeIngrediente[0])
 
 const asado = new Ingrediente(
-    "Asado", tipoDeIngrediente[0], )
+    "Asado", tipoDeIngrediente[0] )
 
 
 const choriso = new Ingrediente(
@@ -106,7 +103,7 @@ const choriso = new Ingrediente(
        "Carne picada", tipoDeIngrediente[0] )
 
 
-
+      
 
 
 
@@ -131,6 +128,7 @@ const tomate = new Ingrediente(
 const papa = new Ingrediente(
     "Papa", tipoDeIngrediente[1]
 )
+
 
 //zanahoria
 // brocoli
@@ -172,6 +170,7 @@ const queso = new Ingrediente(
     "Queso parmezano", tipoDeIngrediente[3]
 )
 
+ 
 
 
 //---------- Ingredientes - Cereales-Harinas tipoDeIngrediente[4]-------
@@ -217,6 +216,12 @@ const calditos = new Ingrediente(
     "Calditos", tipoDeIngrediente[5]
 )
 
+
+///----------------------------------  lista de ingredientes
+
+let todosLosIngredientes = [pechuga, merluza, vacio , asado,  choriso, carnePicada, verdeo, morron, cebolla,
+    lechuga, tomate, papa, lenteja, poroto, arbejas, muzzarella , crema, leche, manteca, queso, harina,
+    pan, fideosLargos, fideoSopa, arroz, pureTomate, salsaSoja, huevos, calditos]
 
 
 //-------------------------------------------------------------------------------------
@@ -277,6 +282,38 @@ const choripan = new Receta(
 // 
 
 
+
+
+const pechugaAlhorno = new Receta(  "Pechuga de pollo al horno con verduras",  ".... Corta las verduras en trozos grandes y mézclalas con aceite de oliva, sal y pimienta. Coloca las pechugas de pollo en una bandeja para horno y añade las verduras alrededor. o mariposa?", [pechuga, morron, cebolla], formaDeCocinar[0], 30)
+const merluzaConQueso = new Receta(  "Merluza al horno con salsa de tomate y queso",  "Coloca los filetes de merluza en una bandeja para horno. Prepara una salsa de tomate con ajo, aceite de oliva, sal, pimienta y hierbas. Vierte la salsa sobre el pescado y cubre con rodajas de tomate y queso mozzarella.", [merluza, queso, tomate], formaDeCocinar[0], 30)
+const asadoHornoConPapas = new Receta(  "Asado al horno con papas y cebolla",  "Coloca los filetes de merluza en una bandeja para horno. Prepara una salsa de tomate con ajo, aceite de oliva", [asado, cebolla, papa], formaDeCocinar[0], 30)
+const pastelPapa = new Receta(  "Pastel de carne al horno con crema y queso",  ".... Entero o mariposa?", [papa, crema, carnePicada, cebolla, queso], formaDeCocinar[0], 30)
+
+const choriConPureYQueso = new Receta(  "Chorizos a la sartén con puré de tomate y queso",  ".... Esta receta no contiene gluten, por lo que es apta para celíacos. Sigue los mismos pasos que la receta anterior para cocinar los chorizos y el puré de tomate con queso rallado. Sirve caliente", [choriso, queso, papa], formaDeCocinar[1], 30)
+const salteadoDeVerduras = new Receta(  "Salteado de verduras con tofu a la sartén",  "Corta el tofu en cubos y saltea en una sartén grande con aceite de oliva hasta que esté dorado por todos los lados. Retira el tofu de la sartén y reserva. En la misma sartén, saltea los pimientos, cebolla, calabacín y tomate cortados en trozos hasta que estén tiernos. Añade el tofu nuevamente a la sartén y cocina por unos minutos más. Sazona con sal y pimienta al gusto", [cebolla, morron, tomate], formaDeCocinar[1], 30)
+const huevoFrito = new Receta(  "Huevos fritos",  "Ojo que quema", [huevos, pan], formaDeCocinar[1], 30)
+const panqueques = new Receta(  "Panqueques",  "revolver y agregar en sarten muy caliente", [huevos, harina, leche], formaDeCocinar[1], 10)
+
+
+
+
+const polloAlDisco = new Receta(  "Pollo al disco",  "la Mejor receta", [pechuga, pureTomate, arbejas, cebolla, morron], formaDeCocinar[3], 30)
+
+
+
+
+const fideosConTUco = new Receta(  "Fideos con tuco",  "Bien para el frío", [fideosLargos, cebolla, morron, pureTomate], formaDeCocinar[4], 30)
+const puchero = new Receta(  "Puchero",  "Agregar lo q sea", [papa, calditos, fideoSopa, morron, cebolla], formaDeCocinar[4], 30)
+
+
+const ensaladaLYT = new Receta(  "Ensalada de lechuga y tomate",  "Para acompañar lo q sea", [tomate, lechuga], formaDeCocinar[5], 5)
+
+
+
+
+
+
+
 //------ Recetas em Olla
 
 //------
@@ -291,7 +328,9 @@ const choripan = new Receta(
 
 //----------------------- Array de recetas. Aca van a estar TODAS LAS RECETAS. Es la BD por el momento.
 
-const todasLasRecetas = [polloAlVerdeo, pizza, tartaVerduas, parrillada, choripan, wokVegetales, vacioAlHorno, asadidto, polloALaParrilla ]
+const todasLasRecetas = [polloAlVerdeo, pizza, tartaVerduas, parrillada, choripan, wokVegetales, vacioAlHorno, asadidto, polloALaParrilla,
+    pechugaAlhorno, merluzaConQueso, asadoHornoConPapas, pastelPapa , choriConPureYQueso, salteadoDeVerduras, huevoFrito, panqueques,
+    polloAlDisco, fideosConTUco, puchero, ensaladaLYT ]
 
 
 
