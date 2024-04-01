@@ -1,5 +1,5 @@
 const btnNuevaReceta = document.querySelector('#btnNuevaReceta')
-btnNuevaReceta.addEventListener('click', guardarReceta)
+btnNuevaReceta.addEventListener('click', crearNuevaReceta)
 
 const pasosReceta = document.querySelector('#pasosReceta')
 const nombreReceta = document.querySelector('#nombreReceta')
@@ -8,38 +8,45 @@ const tiempoReceta = document.querySelector('#tiempoReceta')
 
 function crearNuevaReceta() {
     if (ingredientesQueTiene.length == 0) {
-        alertaValidacion("Debe seleccionar al menos un ingrediente")
+        validarCampo("Debe seleccionar al menos un ingrediente")
 
     } else if (formaDeCocina.value == "Indistinto") {
-        alertaValidacion("Debe seleccionar donde cocinarlo")
+        validarCampo("Debe seleccionar donde cocinarlo")
 
     } else if (nombreReceta.value.length < 5) {
-        alertaValidacion("La receta debe tener un nombre")
+        validarCampo("La receta debe tener un nombre")
 
     } 
     else if (!tiempoReceta.value.length) {
-        alertaValidacion("La receta debe tener un tiempo de preparacion")
+        validarCampo("La receta debe tener un tiempo de preparacion")
 
     } else if (pasosReceta.value.length < 30) {
-        alertaValidacion("La receta debe tener al menos 30 caracteres")
+        validarCampo("La receta debe tener al menos 30 caracteres")
 
     }
     else {
-        alertaValidacion("Creaste una receta")
+        validarCampo("Creaste una receta")
         // ahora si hago la funcion de guardarlo en el Local Storage
 
     } guardarReceta
 }
+//------------ como segundo parametro va a tener la variable donde esta.
 
-function alertaValidacion(problema) {
-    alert(problema)
+function validarCampo(msj){
+    const mensajeError = document.createElement("p")
+    mensajeError.textContent = msj
+    mensajeError.classList.add("error")
+    const modalMensaje = document.querySelector(".contentParaModal")
+    modalMensaje.appendChild(mensajeError)
+   
+// agregar una clase que cambie el fondo o el borde a rojo
+    setTimeout(() => {
+        mensajeError.remove()
+      
+//quitarle esa clase
+    }, 3000)
 
-    // va a imprimir un mensaje tipo Alert indicando el problema, y inhabilitando todo por 3 segundos, luego se borra
 }
-
-// creacion en storage
-
-// boton para recuperar esa info... favoritos y mis recetas? o incorporo a los filtros? q hago?
 
 
 function guardarReceta(){
@@ -48,10 +55,20 @@ let recetaUsuario = new Receta (nombreReceta.value, pasosReceta.value, ingredien
     formaDeCocina.value, tiempoReceta.value )
     
     localStorage.setItem("recetasDeUsuario", JSON.stringify(recetaUsuario))
+    alert("receta guardada")
+
+
 
 
 }
 
+
+
+//--------------------------------------------------------------
+//--------------------------------------------------------------
+//----------------HACERLO COMO ARRAY------------------------
+//--------------------------------------------------------------
+//--------------------------------------------------------------
 
 // para recuperar lo hace con un parse. justito a la hora
 
@@ -65,4 +82,12 @@ la idea es que al cargar el Buscador,
 entre en storage, obtenga todas las recetas creadas
 y por cada una, si NO existe, la pushee en Recetas.
 
+
+
+
+//----------------------------
+//---------DESDE APP.JS-------
+//----------------------------
+
+Tambien tener en cuenta,que ahi hay que recorrrer un array que haga individualmente lo q esta haciendo
 */

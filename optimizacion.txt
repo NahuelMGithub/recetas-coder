@@ -1,0 +1,41 @@
+arroy function reglasUna sola línea, un parámetro:
+
+
+const cuadrado = x => x * x;
+
+const sumar = (a, b) => a + b;
+
+const saludar = (nombre) => {
+    const mensaje = `Hola, ${nombre}!`;
+    return mensaje;
+};
+
+revisar, creo que hay mas reglasUna
+
+///---------------------------------------------------------------
+
+operador terniario
+
+if(condicion){
+    reslutado
+} else{
+    resultado2
+} 
+
+condicion? reslutado : resultado2
+
+--------------------------------------------
+operador logico and 
+
+if(condicion){
+    resultado
+}
+
+condicion && resultado
+
+--------------------------------------------
+
+
+
+
+--------------------------------------------

@@ -8,7 +8,7 @@ objetos - tiene
 array - tiene
 storage y json - tiene
 eventos del DOM - tiene
-Optimizar -  FALTA
+Optimizar -  un poquito, pero tiene
 
 
 ----------------------------
@@ -16,35 +16,21 @@ Optimizar -  FALTA
             PASOS
 
 
-leer ultimo power y hacer refactor
-ver afeter 3
+
  
-funciones accesorias (alerta y tiempo espera)
+funciones accesorias 
+hice algo, pero terminar y agregar estetica
+
+mensaje error
+spinner
 
 
 card---------
-estetica
-incorporar video a receta (y btn)
-incorporar foto
-
-------------------------------------------------------------
-        funciones accesoraias
-
-mostrar alerta con iner html
-video de carga con 3 segundos
+estetica, tamaño minimo y maximo. 
 
 
-------------------------------------------------------------
 
-ver: 
-after 3 
 
-------------------------------------------------------------
-
-data:
-
-hacer 20 recetas
-a todas agregarle imagen?
 
 ------------------------------------------------------------
 
@@ -107,7 +93,7 @@ seleccionar por choise
 
 hacer 36 ingredientes
 
-
+mostrar alerta con iner html
 
 webs:
 buscador de recetas
@@ -120,3 +106,19 @@ input pasos
 Guardar
 
 ver storage y hacer stora en app ---como verlos? 
+
+hacer 20 recetas
+
+
+
+------------------------------------------------------------
+        funciones accesoraias
+
+
+video de carga con 3 segundos
+
+
+------------------------------------------------------------
+
+ver: 
+after 3 

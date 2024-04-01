@@ -1,0 +1,34 @@
+Aca voy a escribir las cosas que quiero agregar para la entrega final
+junto con las correcciones que me hagan de la entrega.
+
+
+si quiero hacer lo de Favoritos, en clase extra tres, minuto 42 explica la parte del tarjet
+ademas, explica como crear un id correctamente
+
+target.parentElement.id
+
+
+
+---------------------
+
+traer desde el local storage
+en array
+al cargar la web, asi no tiene que ejecutar cada vez q busco
+
+----------------------------
+
+leer ultimo power y hacer resumen de arroy y tipos de optimizacion
+ver de nuevo spred, porque no me quedó claro como usarlo
+
+
+
+------------------------------------------------------------
+
+data: agregar imagenes
+
+-------------------------------------------------------
+cards
+a todas agregarle imagen?
+
+
+incorporar video a receta (y btn)
