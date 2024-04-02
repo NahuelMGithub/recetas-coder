@@ -33,7 +33,7 @@ function crearNuevaReceta() {
 //------------ como segundo parametro va a tener la variable donde esta.
 
 function validarCampo(msj){
-    const mensajeError = document.createElement("p")
+    const mensajeError = document.createElement("H3")
     mensajeError.textContent = msj
     mensajeError.classList.add("error")
     const modalMensaje = document.querySelector(".contentParaModal")

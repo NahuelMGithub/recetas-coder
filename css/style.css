@@ -17,7 +17,6 @@
   color: black;
   background-color: rgb(101, 98, 210);
   padding: 5px;
-  border: 2px solid black;
   box-shadow: 2px;
   border-radius: 10px;
   transition: 0.6s;
@@ -28,7 +27,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid black;
+}
+.header .nav-inf .form-select {
+  width: 80%;
 }
 .header .nav-inf .selectores {
   width: 80%;
@@ -37,7 +38,8 @@
 }
 .header .nav-inf .selectorReceta {
   margin: 15px;
-  width: 400px;
+  width: auto;
+  min-width: 450px;
   height: 120px;
   border: 2px solid white;
   border-radius: 15px;
@@ -67,17 +69,18 @@
   width: 1400px;
   border: 2px solid black;
   display: flex;
-  gap: 30px;
-  overflow-y: scroll;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card {
   width: 200px;
   height: 400px;
   overflow-y: scroll;
+  margin-bottom: 20px;
 }
 
-#btnBuscadorDeRecetas {
+.btnPrincipal {
   background-image: linear-gradient(to bottom right, rgb(101, 98, 210), #feb47b);
   margin: 20px;
   color: black;
@@ -89,7 +92,7 @@
   transition: 0.7s;
 }
 
-#btnBuscadorDeRecetas:hover {
+.btnPrincipal:hover {
   color: black;
   background-image: linear-gradient(to bottom right, #feb47b, rgb(101, 98, 210));
   padding: 5px;
@@ -114,44 +117,59 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9999;
-  
 }
 
 .modal-content {
   background-image: linear-gradient(to bottom right, #feb47b, rgb(101, 98, 210));
-  margin: 1% auto;
-  padding: 20px;
+  margin: 5% auto;
+  padding: 15px;
   border: 1px solid #000;
   width: 90%;
   text-align: center;
   display: flex;
   flex-direction: column;
-  
 }
 
 .modal_content-partes {
   display: flex;
   justify-content: space-around;
+  margin: 10px;
   width: 90%;
   height: auto;
-  border: 2px solid red;
 }
 
 .ingredienteModal {
   width: 40%;
   height: auto;
   min-height: 100px;
-  border: 1px solid gray;
+  border: 1px solid rgb(83, 33, 33);
   border-radius: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  transition: 0.3s;
+  padding: 15px;
+}
+.ingredienteModal form label {
+  width: 170px;
+}
+
+.ingredienteModal:hover {
+  background-image: linear-gradient(to bottom right, #feb47b, rgb(101, 98, 210));
+}
+
+.selctoresNuevaReceta {
+  margin-bottom: 40px;
 }
 
 .formNuevasRecetas {
   margin: 15px;
   width: 1000px;
-  height: 400px;
+  height: 350px;
 }
 .formNuevasRecetas #pasosReceta {
   border-radius: 25px;
@@ -169,6 +187,20 @@
   vertical-align: center;
   resize: none;
   padding-left: 10px;
+}
+
+#tiempoReceta {
+  border-radius: 10px;
+  width: 20%;
+  height: 10%;
+  vertical-align: center;
+  resize: none;
+  padding-left: 10px;
+  margin: 10px 25px;
+}
+
+.error {
+  color: red;
 }
 
 * {

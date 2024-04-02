@@ -25,7 +25,7 @@
             color: black;
             background-color: $colo-secundary;
             padding: 5px;
-            border: 2px solid black;
+          
             box-shadow: 2px;
             border-radius: 10px;
             transition: 0.6s;
@@ -38,7 +38,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 2px solid black;
+
+        .form-select{
+            width: 80%;
+        }
+      
 
 
         .selectores {
@@ -51,7 +55,8 @@
 
         .selectorReceta {
             margin: 15px;
-            width: 400px;
+            width: auto;
+            min-width: 450px;
             height: 120px;
             border: 2px solid white;
             border-radius: 15px;

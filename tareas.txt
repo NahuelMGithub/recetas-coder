@@ -13,43 +13,6 @@ Optimizar -  un poquito, pero tiene
 
 ----------------------------
 
-            PASOS
-
-
-
- 
-funciones accesorias 
-hice algo, pero terminar y agregar estetica
-
-mensaje error
-spinner
-
-
-card---------
-estetica, tamaño minimo y maximo. 
-
-
-
-
-
-------------------------------------------------------------
-
-
-
-estetica
-
-for en el label, para que me permita hacer clik y q entre. una huevada
-
-Acomodar cards
-
-acomodar menu
-
-------------------------------------------funciones y optimizacion
-
-probablemente pueda usar un spred para ver el array
-
-tal vez pueda optimizar con un ternario y con la notacion destruction (o como se diga)
-
 
 
 ------------------------------------------------------------------------------------------------------------------
@@ -122,3 +85,37 @@ video de carga con 3 segundos
 
 ver: 
 after 3 
+
+
+ 
+funciones accesorias 
+hice algo, pero terminar y agregar estetica
+
+mensaje error
+spinner
+
+
+card---------
+estetica, tamaño minimo y maximo. 
+
+
+
+
+
+------------------------------------------------------------
+
+
+
+estetica
+
+for en el label, para que me permita hacer clik y q entre. una huevada
+
+Acomodar cards
+
+acomodar menu
+
+------------------------------------------funciones y optimizacion
+
+probablemente pueda usar un spred para ver el array
+
+tal vez pueda optimizar con un ternario y con la notacion destruction (o como se diga)

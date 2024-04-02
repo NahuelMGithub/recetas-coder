@@ -186,7 +186,7 @@ function mostrarRecetas(recetasAMostrar) {
                 <p class="card-text">Ingredientes: ${mostrarIngredientes(receta.ingredientes)}</p>
                 <p class="card-text">Modo de cocinar: ${receta.formaCocina}</p>
                 <p class="card-text">Pasos: ${receta.instrucciones}</p>
-                <a href="#" class="btn btn-primary agregarAFavoritos" >Agregar a Favoitos</a>
+                <a href="#" class="btn btn-primary agregarAFavoritos" >Ver video.</a>
               </div>
             </div>
             `
@@ -277,7 +277,7 @@ tome un segundo parametro y colorre el lugar
 se borre todo a los 3 segundos
 */
 function mostrarError(msj) {
-    const mensajeError = document.createElement("p")
+    const mensajeError = document.createElement("H3")
     mensajeError.textContent = msj
     mensajeError.classList.add("error")
     const modalMensaje = document.querySelector(".contentParaModal")

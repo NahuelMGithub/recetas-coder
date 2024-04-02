@@ -1,0 +1,15 @@
+Hola Profe o Lucas. 
+
+Cosas que voy a agregar a la siguiente entrega (Final)
+
+un video y una imagen por receta. 
+El btn te va a llevar al video explicando la receta 
+
+Un spinner, para hacer parecer que esta procesando el pedido
+
+Un logo? si es necesario. 
+
+Funcionalidad: Por ahora hice que desde el creador de receas, se guarde una sola receta. 
+Voy a incorporar para que sea una lista de recetas.
+
+Seguir optimizando, esa es la parte que más me costó. 

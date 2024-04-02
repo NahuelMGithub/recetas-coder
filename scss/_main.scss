@@ -22,8 +22,8 @@
     width: 1400px;
     border: 2px solid black;
     display: flex;
-    gap: 30px;
-    overflow-y: scroll;
+    flex-wrap: wrap; 
+    justify-content: space-between;
    
 
 }
@@ -32,15 +32,16 @@
     width: 200px;
     height: 400px;
    overflow-y: scroll;
+   margin-bottom: 20px;
 
  
 }
 
-#btnBuscadorDeRecetas {
+//#btnBuscadorDeRecetas
+ .btnPrincipal {
    
     background-image: linear-gradient(to bottom right,  $colo-secundary, $colo-primary);
- 
-    margin: 20px;
+     margin: 20px;
     color: black;
     font-size: 30px;
     text-decoration: none;
@@ -51,7 +52,8 @@
 
 }
 
-#btnBuscadorDeRecetas:hover {
+//#btnBuscadorDeRecetas:hover
+.btnPrincipal:hover {
     color: black;
     background-image: linear-gradient(to bottom right,  $colo-primary, $colo-secundary); 
     padding: 5px;

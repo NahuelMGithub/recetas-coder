@@ -30,15 +30,15 @@
     </nav>
     <nav class="nav-inf">
       <section class="selectores-conteiner">
-        <p>Elegí la receta a tu medida</p>
+      
         <section class="selectores">
           <div class="selectorReceta">
             <h3>Que ingredientes tenes?</h3>
-            <button id="btnModalIngredientes">Filtrar Ingredientes</button>
+            <button id="btnModalIngredientes" class="btn btn-primary">Filtrar Ingredientes</button>
           </div>
           <div class="selectorReceta formasDeCocina">
             <h3>Donde lo cocinas</h3>
-            <select id="seleccion-formaCocina">
+            <select class="form-select"   id="seleccion-formaCocina">
 
               <option value="Indistinto">Indistinto </option>
               <option value="Horno">Horno </option>
@@ -51,7 +51,7 @@
           </div>
           <div class="selectorReceta aptas">
             <h3>Dieta</h3>
-            <select id="seleccion-dieta">
+            <select id="seleccion-dieta" class="form-select">
 
               <option value="Indistinto">Indistinto </option>
               <option value="Celiaco">Celiaco </option>
@@ -73,7 +73,7 @@
 
   <main class="main">
 
-    <button id="btnBuscadorDeRecetas">Buscar Recetas</button>
+    <button id="btnBuscadorDeRecetas" class="btnPrincipal">Buscar Recetas</button>
 
     <!-- uso este div para meterle el error  -->
     <div class="contentParaModal"></div>
@@ -81,44 +81,43 @@
     <div id="menuIngredientes" class="modal">
       <div class="modal-content">
         <section class="modal_content-partes configuracion">
-              <button id="selecAll">Seleccionar todos</button>
-    
-
-          <p>Selecciona los Ingredientes que desea usar:</p>
+          <h4>Selecciona los Ingredientes que tienes. </h4>
+              <button id="selecAll" class="btn btn-secondary">Seleccionar todos</button>
+            
         </section>
         <section class="modal_content-partes sup">
           <div class="ingredienteModal carnes">
             <section class="ingredienteTitulo"><h3>Carnes</h3></section>
-            <form action="#">
+            <form action="#" class="modal-form">
               <input type="checkbox" id="opcion1" name="Pollo" value="Pollo">
               <label for="opcion1">Pollo</label><br>
               <input type="checkbox" id="opcion2" name="opcion2" value="Merluza">
               <label for="opcion2">Merluza</label><br>
               <input type="checkbox" id="opcion3" name="opcion3" value="Vacio">
               <label for="opcion3">Vacio</label><br>
-              <input type="checkbox" id="opcion1" name="opcion1" value="Asado">
-              <label for="opcion1">Asado</label><br>
-              <input type="checkbox" id="opcion2" name="opcion2" value="Choriso">
-              <label for="opcion2">Choriso</label><br>
-              <input type="checkbox" id="opcion3" name="opcion3" value="Carne picada">
-              <label for="opcion3">Carne picada</label><br>
+              <input type="checkbox" id="opcion4" name="opcion1" value="Asado">
+              <label for="opcion4">Asado</label><br>
+              <input type="checkbox" id="opcion5" name="opcion2" value="Choriso">
+              <label for="opcion5">Choriso</label><br>
+              <input type="checkbox" id="opcion6" name="opcion3" value="Carne picada">
+              <label for="opcion6">Carne picada</label><br>
             </form>
           </div>
           <div class="ingredienteModal verdura">
             <section class="ingredienteTitulo vegeales"><h3>Vegetales</h3></section>
             <form action="#">
-              <input type="checkbox" id="opcion1" name="opcion1" value="Cebolla de Verdeo">
-              <label for="opcion1">Cebolla de Verdeo</label><br>
-              <input type="checkbox" id="opcion2" name="opcion2" value="Morron">
-              <label for="opcion2">Morron</label><br>
-              <input type="checkbox" id="opcion3" name="opcion3" value="Cebolla">
-              <label for="opcion3">Cebolla 3</label><br>
-              <input type="checkbox" id="opcion1" name="opcion1" value="Lechuga">
-              <label for="opcion1">Lechuga</label><br>
-              <input type="checkbox" id="opcion2" name="opcion2" value="Tomate">
-              <label for="opcion2">Tomate</label><br>
-              <input type="checkbox" id="opcion3" name="opcion3" value="Papa">
-              <label for="opcion3">Papa</label><br>
+              <input type="checkbox" id="opcion21" name="opcion1" value="Cebolla de Verdeo">
+              <label for="opcion21">Cebolla de Verdeo</label><br>
+              <input type="checkbox" id="opcion22" name="opcion2" value="Morron">
+              <label for="opcion22">Morron</label><br>
+              <input type="checkbox" id="opcion23" name="opcion3" value="Cebolla">
+              <label for="opcion23">Cebolla 3</label><br>
+              <input type="checkbox" id="opcion24" name="opcion1" value="Lechuga">
+              <label for="opcion24">Lechuga</label><br>
+              <input type="checkbox" id="opcion25" name="opcion2" value="Tomate">
+              <label for="opcion25">Tomate</label><br>
+              <input type="checkbox" id="opcion26" name="opcion3" value="Papa">
+              <label for="opcion26">Papa</label><br>
             </form>
           </div>
         </section>
@@ -126,27 +125,27 @@
           <div class="ingredienteModal legumbre">
             <section class="ingredienteTitulo"><h3>Legumbre</h3></section>
             <form action="#">
-              <input type="checkbox" id="opcion1" name="opcion1" value="Lentejas">
-              <label for="opcion1">Lentejas</label><br>
-              <input type="checkbox" id="opcion2" name="opcion2" value="Poroto">
-              <label for="opcion2">Poroto</label><br>
-              <input type="checkbox" id="opcion3" name="opcion3" value="Arbejas">
-              <label for="opcion3">Arbejas</label><br>
+              <input type="checkbox" id="opcion31" name="opcion1" value="Lentejas">
+              <label for="opcion31">Lentejas</label><br>
+              <input type="checkbox" id="opcion32" name="opcion2" value="Poroto">
+              <label for="opcion32">Poroto</label><br>
+              <input type="checkbox" id="opcion33" name="opcion3" value="Arbejas">
+              <label for="opcion33">Arbejas</label><br>
             </form>
           </div>
           <div class="ingredienteModal lacteo">
             <section class="ingredienteTitulo"><h3>Lacteos</h3></section>
             <form action="#">
-              <input type="checkbox" id="opcion1" name="opcion1" value="Muzzarella">
-              <label for="opcion1">Muzzarella</label><br>
-              <input type="checkbox" id="opcion2" name="opcion2" value="Crema de leche">
-              <label for="opcion2">Crema de leche</label><br>
-              <input type="checkbox" id="opcion3" name="opcion3" value="Leche">
-              <label for="opcion3">Leche</label><br>
-              <input type="checkbox" id="opcion1" name="opcion1" value="Manteca">
-              <label for="opcion1">Manteca</label><br>
-              <input type="checkbox" id="opcion2" name="opcion2" value="Queso parmezano">
-              <label for="opcion1">Queso parmezano</label><br>
+              <input type="checkbox" id="opcion41" name="opcion1" value="Muzzarella">
+              <label for="opcion41">Muzzarella</label><br>
+              <input type="checkbox" id="opcion42" name="opcion2" value="Crema de leche">
+              <label for="opcion42">Crema de leche</label><br>
+              <input type="checkbox" id="opcion43" name="opcion3" value="Leche">
+              <label for="opcion43">Leche</label><br>
+              <input type="checkbox" id="opcion44" name="opcion1" value="Manteca">
+              <label for="opcion44">Manteca</label><br>
+              <input type="checkbox" id="opcion45" name="opcion2" value="Queso parmezano">
+              <label for="opcion45">Queso parmezano</label><br>
              
         
             </form>
@@ -157,30 +156,30 @@
         <div class="ingredienteModal cerealesHarinas">
           <section class="ingredienteTitulo"><h3>Cereales-Harinas</h3></section>
           <form action="#">
-            <input type="checkbox" id="opcion1" name="opcion1" value="Harina">
-            <label for="opcion1">Harina</label><br>
-            <input type="checkbox" id="opcion2" name="opcion2" value="Pan">
-            <label for="opcion2">Pan</label><br>
-            <input type="checkbox" id="opcion3" name="opcion3" value="Fideos Largos">
-            <label for="opcion3">Fideos Largos</label><br>
-            <input type="checkbox" id="opcion1" name="opcion1" value="Arroz">
-            <label for="opcion1">Arroz</label><br>
-            <input type="checkbox" id="opcion2" name="opcion2" value="Fideos de Sopa">
-            <label for="opcion2">Fideos de Sopa</label><br>
+            <input type="checkbox" id="opcion51" name="opcion1" value="Harina">
+            <label for="opcion51">Harina</label><br>
+            <input type="checkbox" id="opcion52" name="opcion2" value="Pan">
+            <label for="opcion52">Pan</label><br>
+            <input type="checkbox" id="opcion53" name="opcion3" value="Fideos Largos">
+            <label for="opcion53">Fideos Largos</label><br>
+            <input type="checkbox" id="opcion54" name="opcion1" value="Arroz">
+            <label for="opcion54">Arroz</label><br>
+            <input type="checkbox" id="opcion55" name="opcion2" value="Fideos de Sopa">
+            <label for="opcion55">Fideos de Sopa</label><br>
             
           </form>
         </div>
         <div class="ingredienteModal alacena">
           <section class="ingredienteTitulo"><h3>Alacena</h3></section>
           <form action="#">
-            <input type="checkbox" id="opcion1" name="opcion1" value="Pure de Tomate">
-            <label for="opcion1">Pure de Tomate</label><br>
-            <input type="checkbox" id="opcion2" name="opcion2" value="Salsa de Soja">
-            <label for="opcion2">Salsa de Soja</label><br>
-            <input type="checkbox" id="opcion3" name="opcion3" value="Huevos">
-            <label for="opcion3">Huevos</label><br>
-            <input type="checkbox" id="opcion1" name="opcion1" value="Calditos">
-            <label for="opcion1">Calditos</label><br>
+            <input type="checkbox" id="opcion61" name="opcion1" value="Pure de Tomate">
+            <label for="opcion61">Pure de Tomate</label><br>
+            <input type="checkbox" id="opcion62" name="opcion2" value="Salsa de Soja">
+            <label for="opcion62">Salsa de Soja</label><br>
+            <input type="checkbox" id="opcion63" name="opcion3" value="Huevos">
+            <label for="opcion63">Huevos</label><br>
+            <input type="checkbox" id="opcion64" name="opcion1" value="Calditos">
+            <label for="opcion64">Calditos</label><br>
            
           </form>
         </div>
@@ -188,7 +187,7 @@
 
     
         <section class="modal_content-partes configuracion">
-          <button id="guardarModal">GUARDAR</button>
+          <button id="guardarModal" class="btn btn-primary">GUARDAR</button>
 
       
     </section>
@@ -208,6 +207,7 @@
   <footer class="footer">
     <div class="footer-text">
       <h3>Más de 1500 recetas</h3>
+      <p>(redondeando muy para arriba)</p>
     </div>
     <div class="footer-auspiciantes">
 
