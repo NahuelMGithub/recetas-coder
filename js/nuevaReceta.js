@@ -1,9 +1,14 @@
-const btnNuevaReceta = document.querySelector('#btnNuevaReceta')
-btnNuevaReceta.addEventListener('click', crearNuevaReceta)
+
 
 const pasosReceta = document.querySelector('#pasosReceta')
 const nombreReceta = document.querySelector('#nombreReceta')
 const tiempoReceta = document.querySelector('#tiempoReceta')
+
+const btnNuevaReceta = document.querySelector('#btnNuevaReceta')
+btnNuevaReceta.addEventListener('click', crearNuevaReceta)
+
+
+
 
 
 function crearNuevaReceta() {
@@ -26,9 +31,11 @@ function crearNuevaReceta() {
     }
     else {
         validarCampo("Creaste una receta")
-        // ahora si hago la funcion de guardarlo en el Local Storage
 
-    } guardarReceta
+        guardarReceta()
+    } 
+
+  
 }
 //------------ como segundo parametro va a tener la variable donde esta.
 
@@ -49,45 +56,37 @@ function validarCampo(msj){
 }
 
 
+
+
+
+//-------- aca reemplaza por una. yo quiero traer el array, pushear y meter 
+
+
+
+
+
+let recetasDelUsuario = []
+
+
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    if( JSON.parse(localStorage.getItem('recetasDeUsuario'))) {
+        recetasDelUsuario = JSON.parse(localStorage.getItem('recetasDeUsuario'))
+    } else{
+        recetasDelUsuario = []
+    }
+
+   
+})
+
 function guardarReceta(){
-
-let recetaUsuario = new Receta (nombreReceta.value, pasosReceta.value, ingredientesQueTiene, 
-    formaDeCocina.value, tiempoReceta.value )
+    let recetaUsuario = new Receta (nombreReceta.value, pasosReceta.value, ingredientesQueTiene, 
+        formaDeCocina.value, tiempoReceta.value )
+         recetasDelUsuario.push(recetaUsuario)
+         localStorage.setItem("recetasDeUsuario", JSON.stringify(recetasDelUsuario))
+         /* console.log(recetaUsuario)
+         console.log(recetasDelUsuario) */
     
-    localStorage.setItem("recetasDeUsuario", JSON.stringify(recetaUsuario))
-    alert("receta guardada")
-
-
-
-
+   
 }
 
-
-
-//--------------------------------------------------------------
-//--------------------------------------------------------------
-//----------------HACERLO COMO ARRAY------------------------
-//--------------------------------------------------------------
-//--------------------------------------------------------------
-
-// para recuperar lo hace con un parse. justito a la hora
-
-// se me ocurre que puedo recuperar todo. pushear el objeto y setear.
-
-// recuperar y setear objetos dentro de un array
-
-
-/*
-la idea es que al cargar el Buscador, 
-entre en storage, obtenga todas las recetas creadas
-y por cada una, si NO existe, la pushee en Recetas.
-
-
-
-
-//----------------------------
-//---------DESDE APP.JS-------
-//----------------------------
-
-Tambien tener en cuenta,que ahi hay que recorrrer un array que haga individualmente lo q esta haciendo
-*/

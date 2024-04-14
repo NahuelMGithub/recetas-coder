@@ -6,17 +6,38 @@
 //------- sirve para los filtros por ingrediente
 let ingredientesQueTiene = []
 
+let banderaBtn = true // me sirve para dejar o no usar botones
 
 //---------------------------------DOM
 //----- sirve para dejar las recetas que busco
 const cartaMenu = document.querySelector('#menuRecetas')
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    let recetaImportadaDeUsuario = []
+    if (JSON.parse(localStorage.getItem('recetasDeUsuario'))) {
+        let recetasDelUsuario = JSON.parse(localStorage.getItem('recetasDeUsuario'))
+
+        recetasDelUsuario.forEach(function (recetaImportada) {
+            let ingredientesDeRecetaImportada = buscarIngredientesImportados(recetaImportada.ingredientes)
+
+            let nuevaRecetaImportada = new Receta(recetaImportada.nombre, recetaImportada.instrucciones,
+                ingredientesDeRecetaImportada, recetaImportada.formaCocina, recetaImportada.tiempo)
+            recetaImportadaDeUsuario.push(nuevaRecetaImportada)
+            todasLasRecetas.push(nuevaRecetaImportada);
+
+        })
+    }
+
+
+})
 
 ///---------------------------------------------------------------------------------
 ///-------------------BOTONES-----------------------------------------------------
 ///---------------------------------------------------------------------------------
 
 
-let banderaBtn = true // me sirve para dejar o no usar botones
+
 
 //----------------------------------- boton modal
 
@@ -71,6 +92,7 @@ function guardarModal() {
     });
 
     menuModal.style.display = "none";
+
 }
 
 //---- esta funcion la hice para ahorrar tiempo. Selecciona todos, o le quita la seleccion a todos
@@ -95,7 +117,7 @@ function buscarRecetas() {
 
     // primero, limpiar la panalla, por si vuelvo a pedir
     limpiarCarta()
-    obtenerRectasCreadas()
+
 
     //------------------- menu de carga. Eventualmente va a ser una de esas animaciones que indica que esta buscando
 
@@ -113,36 +135,23 @@ function buscarRecetas() {
 
     if (dieta.value != "Indistinto") {
 
-        dieta.value == 'Vegetariano'  && ( recetasFltradas = recetasFltradas.filter(receta => receta.esVegetariano()))
-        
-        dieta.value == 'Vegano'&& ( recetasFltradas = recetasFltradas.filter(receta => receta.esVegano()))
-          
-        dieta.value == 'Celiaco' &&  (recetasFltradas = recetasFltradas.filter(receta => receta.esAptoCeliaco()))
-        
+        dieta.value == 'Vegetariano' && (recetasFltradas = recetasFltradas.filter(receta => receta.esVegetariano()))
+
+        dieta.value == 'Vegano' && (recetasFltradas = recetasFltradas.filter(receta => receta.esVegano()))
+
+        dieta.value == 'Celiaco' && (recetasFltradas = recetasFltradas.filter(receta => receta.esAptoCeliaco()))
+
     }
 
     //---------------------- filtrar por ingredientes
-    // Me costo una banda. Esto hace lo siguiente:
-    /*
-    Solo si selecciono buscar por criterio de ingredientes:
-    de las recetas que ya tengo, hace un nuevo filtro, y se fija que los ingredientes de cada receta que tengo solo use los ingredientes que seleccione
-    */
+
     if (ingredientesQueTiene.length) {
         recetasFltradas = recetasFltradas.filter(receta => receta.listaIngredientes().every(ingrediente => ingredientesQueTiene.includes(ingrediente)))
-   }
+    }
 
     //--------- muestra los ingredientes
     mostrarRecetas(recetasFltradas)
 }
-
-
-// hay un BUG pero no puedo encontrar el por que.
-/*
-por algun motivo cuando hago un filtro por ingredientes me retoma auque tenga solo el primer elemento
-
-
-*/
-
 
 
 //--------------------- FUNCIONES AUXILIARES
@@ -178,15 +187,17 @@ function mostrarRecetas(recetasAMostrar) {
 
     recetasAMostrar.forEach(
         receta => {
+            const { nombre, ingredientes, formaCocina, instrucciones } = receta
             cartaMenu.innerHTML += `
             <div class="card" style="width: 18rem;">
              
               <div class="card-body">
-                <h5 class="card-title">${receta.nombre}</h5>
-                <p class="card-text">Ingredientes: ${mostrarIngredientes(receta.ingredientes)}</p>
-                <p class="card-text">Modo de cocinar: ${receta.formaCocina}</p>
-                <p class="card-text">Pasos: ${receta.instrucciones}</p>
-                <a href="#" class="btn btn-primary agregarAFavoritos" >Ver video.</a>
+             
+                <h5 class="card-title">${nombre}</h5>
+                <p class="card-text">Ingredientes: ${mostrarIngredientes(ingredientes)}</p>
+                <p class="card-text">Modo de cocinar: ${formaCocina}</p>
+                <p class="card-text">Pasos: ${instrucciones}</p>
+                <a href="#" class="btn btn-primary agregarAFavoritos" >Agregar a Favoritos.</a>
               </div>
             </div>
             `
@@ -249,6 +260,7 @@ en la siguiente funcion comparo los nombres de ingredientes que tengo, respecto 
 objetos ingredientes. los que coinciden en nombre,me traigo ese objeto y lo uso para hacer un array de
 objetos ingredientes. con dicho array hago la Receta importada.
  */
+
 function buscarIngredientesImportados(nombreIngredientesImportados) {
     // almacenar los ingredientes importados
     let ingredientesImportados = [];
@@ -266,8 +278,7 @@ function buscarIngredientesImportados(nombreIngredientesImportados) {
             }
         }
     }
-    console.log(ingredientesImportados)
-    // Devolver el array de ingredientes importados
+
     return ingredientesImportados;
 }
 
